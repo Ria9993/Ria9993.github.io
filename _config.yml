@@ -28,7 +28,7 @@ url: "https://ria9993.github.io" # the base hostname & protocol for your site, e
 highlighter: rouge
 
 # Build settings
-theme: plainwhite
+#theme: plainwhite
 remote_theme: samarsault/plainwhite-jekyll
 
 plainwhite:
