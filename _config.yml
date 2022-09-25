@@ -18,8 +18,6 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-remote_theme: samarsault/plainwhite-jekyll
-
 title: Hyunjun Kim
 email: hyunjun2372@gmail.com
 description: Student # this means to ignore newlines until "baseurl:"
@@ -31,6 +29,7 @@ highlighter: rouge
 
 # Build settings
 theme: plainwhite
+remote_theme: samarsault/plainwhite-jekyll
 
 plainwhite:
   name: Hyunjun Kim
