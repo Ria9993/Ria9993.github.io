@@ -9,7 +9,7 @@ comments: true
 코어마다 로컬 캐시의 내용이 다르게 되어버리는 문제가 생긴다.
 
 이를 해결하기 위해서 하드웨어에서 Cache-Coherence(캐시 일관성)을 지원하는데,  
-주로 Snooping Protocol을 사용한다.
+주로 Snooping Protocol 이라는 방식을 사용한다.
 
 스누핑 프로토콜을 간단히 설명하자면 캐시에 write 작업을 수행 할 때마다 다른 코어들에게 브로드캐스트 한다.  
 다른 코어들은 이 신호를 받고 자신의 로컬-캐시 내에 같은 주소를 들고 있다면 무효화 시키고,  
@@ -21,7 +21,8 @@ Cache-Coherence를 위해 많은 비용이 들텐데,
 하나의 코어가 write 하는 것 보다 느리지 않을까?  
 
 난 두 눈으로 봐야겠다.  
-그냥 같은 곳에 10억번 정도 write 하도록 테스트를 작성  
+그냥 같은 곳에 10억 번 정도 write 하도록 테스트를 작성  
+하나는 스레드 2개가 서로 다른 캐시라인에 5억 번씩 write를 한다
 [테스트 코드(github)](https://github.com/Ria9993/PlayGround/tree/main/Cache%20Coherence%20Bottleneck%20Test)
 ```
 1. Same cache-line 2-thread write      : 376430100ns
