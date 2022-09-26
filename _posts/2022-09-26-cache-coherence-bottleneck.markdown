@@ -20,9 +20,10 @@ comments: true
 Cache-Coherence를 위해 많은 비용이 들텐데,  
 하나의 코어가 write 하는 것 보다 느리지 않을까?  
 
-난 두 눈으로 봐야겠다.  
-그냥 같은 곳에 10억 번 정도 write 하도록 테스트를 작성  
+바로 테스트.  
+같은 캐시라인에 스레드 2개가 총 10억 번 write 하도록 테스트를 작성  
 하나는 스레드 2개가 서로 다른 캐시라인에 5억 번씩 write를 한다  
+스레드 1개가 10억번 write하는 경우도 추가  
 [테스트 코드(github)](https://github.com/Ria9993/PlayGround/tree/main/Cache%20Coherence%20Bottleneck%20Test)
 ```
 1. Same cache-line 2-thread write      : 376430100ns
