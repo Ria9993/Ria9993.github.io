@@ -44,6 +44,11 @@ plainwhite:
   # analytics_id: "< YOUR ID >"
   sitemap: true
   dark_mode: true
-   
+
 plugins:
   - jekyll-seo-tag
+
+image:
+path: /assets/portfolio.png
+height: 100
+width: 100
