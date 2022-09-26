@@ -22,7 +22,7 @@ Cache-Coherence를 위해 많은 비용이 들텐데,
 
 난 두 눈으로 봐야겠다.  
 그냥 같은 곳에 10억 번 정도 write 하도록 테스트를 작성  
-하나는 스레드 2개가 서로 다른 캐시라인에 5억 번씩 write를 한다
+하나는 스레드 2개가 서로 다른 캐시라인에 5억 번씩 write를 한다  
 [테스트 코드(github)](https://github.com/Ria9993/PlayGround/tree/main/Cache%20Coherence%20Bottleneck%20Test)
 ```
 1. Same cache-line 2-thread write      : 376430100ns
@@ -30,28 +30,7 @@ Cache-Coherence를 위해 많은 비용이 들텐데,
 3. Just single-thread write            : 232743700ns
 ```
 테스트에 문제가 있을 수도 있지만,  
-와우. 가설이 맞았다.
+가설이 맞는 것 같다
 
 같은 캐시라인에 스레드 2개가 분담해 write 하면 엄청 느려진다.    
 그냥 하나의 스레드가 write 하는게 더 빠르다.  
-
-<div id="disqus_thread"></div>
-<script id="dsq-count-scr" src="//hyunjunkblog.disqus.com/count.js" async></script>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://hyunjunkblog.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
