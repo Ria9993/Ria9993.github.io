@@ -43,4 +43,7 @@ plainwhite:
   disqus_shortname: hyunjunkimblog
   # analytics_id: "< YOUR ID >"
   sitemap: true
-  dark_mode: true 
+  dark_mode: true
+   
+plugins:
+  - jekyll-seo-tag
