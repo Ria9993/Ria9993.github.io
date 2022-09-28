@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "std::shared_ptr의 문제점"
-date:   2022-09-28 22:44:00 +0900
+date:   2022-09-28 20:44:00 +0900
 categories: CS
 comments: true
 ---

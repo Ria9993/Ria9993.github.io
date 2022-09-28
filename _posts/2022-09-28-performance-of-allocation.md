@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "동적할당(new/delete)은 느리다"
-date:   2022-09-28 20:50:00 +0900
+date:   2022-09-28 16:50:00 +0900
 categories: CS
 comments: true
 ---
