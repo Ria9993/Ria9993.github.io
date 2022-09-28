@@ -34,7 +34,7 @@ remote_theme: samarsault/plainwhite-jekyll
 plainwhite:
   name: Hyunjun Kim
   tagline: Programmer
-  date_format: "%b %-d, %Y"
+  date_format: "%Y-%m-%d %H:%M"
   social_links:
     # twitter: samarsault
     github: ria9993
