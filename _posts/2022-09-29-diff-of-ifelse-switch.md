@@ -75,7 +75,8 @@ test(int):                               # @test(int)
         .long   15                              # 0xf
 ```
 테이블을 만들어 둔 뒤, 
-테이블 범위 이외는 default로 0(xor eax, eax) 반환.  
+테이블 범위 이외는 default로 0 반환.  
+(xor eax, eax 했으므로 eax는 0이다)  
 테이블 범위 이내는 바로 테이블 값으로 바로 반환.  
 
 n이 0~7만 무조건 들어온다고 가정한다면  
