@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "if-else와 switch의 차이"
-date:   2022-09-28 23:55:00 +0900
+date:   2022-09-29 05:04:00 +0900
 categories: CS
 comments: true
 ---
