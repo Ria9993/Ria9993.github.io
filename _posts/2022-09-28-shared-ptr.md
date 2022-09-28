@@ -39,7 +39,7 @@ class shared_block
     T           data;
 };
 ```
-자, 여기서 [ control_block] 의 strong_ref가 0이 되었을 때  
+자, 여기서 [control_block] 의 strong_ref가 0이 되었을 때  
 메모리를 한번에 해제하면 되겠다!  
 
 안된다.  
