@@ -65,16 +65,18 @@ test(int):                               # @test(int)
 .LBB0_2:
         ret
 .Lswitch.table.test(int):
-        .long   5                                # 0x5
+        .long   5                               # 0x5
         .long   10                              # 0xa
-        .long   10                                # 0xa
+        .long   10                              # 0xa
         .long   10                              # 0xa
         .long   0                               # 0x0
         .long   15                              # 0xf
         .long   0                               # 0x0
         .long   15                              # 0xf
 ```
-테이블을 만들어 둔 뒤, 범위 처리 후 바로 테이블 값으로 바로 반환.  
+테이블을 만들어 둔 뒤, 
+테이블 범위 이외는 default로 0(xor eax, eax) 반환.  
+테이블 범위 이내는 바로 테이블 값으로 바로 반환.  
 
 n이 0~7만 무조건 들어온다고 가정한다면  
 맨 앞의 cmp를 없애 더욱 최적화 시킬수도 있다.  
