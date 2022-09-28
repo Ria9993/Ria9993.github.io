@@ -18,10 +18,10 @@ std::shared_ptr 은 2가지가 필요한데
 아래 다이어그램을 보자.  
 ![image](https://user-images.githubusercontent.com/44316628/192790085-082a7b94-c006-45be-bdd5-aaa1cf06f13e.png)  
 [1]  
-다들 위 다이어그램처럼 구성이 되어있다 생각할 것이다.  
+다들 위 다이어그램처럼 구현이 되어있다 생각할 것이다.  
 
-그런데 이러면 문제점이 있는데, free를 두 번이나 해야한다.  
-[저번 포스트](https://ria9993.github.io/cs/2022/09/28/performance-of-allocation.html)에서 얘기했듯이 free는 느리다.  
+그런데 이러면 문제점이 있는데, new/free를 두 번이나 해야한다.  
+[저번 포스트](https://ria9993.github.io/cs/2022/09/28/performance-of-allocation.html)에서 얘기했듯이 동적할당은 느리다.  
 그래서 성능상의 문제로 사실 저 구조가 아니다. 
 
 visual studio에서도 shared_ptr을 까보면 표면적으로도 저렇게 보이지만  
