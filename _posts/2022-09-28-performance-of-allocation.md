@@ -31,8 +31,10 @@ Best-fit을 위해 몇개의 버킷을 만들어 메모리를 small,large 등으
 메모리 지역성이 높아지며,  
 동적인 사이즈를 취급하지 않기 때문에 할당/해제를 100사이클 이하로 끝낼 수 있다.  
 [**[메모리 풀 코드(Github)]**](https://github.com/Ria9993/PlayGround/tree/main/Static%20Memory%20Pool)  
-
-위 내용은 프로그래머 유영천 님이 잘 정리해주신 비디오가 있다.  
+위처럼 메모리 풀로 작성하면 기존 CRT Heap 보다 100배 까지도 빠르다.   
+![image](https://user-images.githubusercontent.com/44316628/193073869-d7c8a50b-9ae9-404a-8da5-cf02977bdc21.png)  
+해당 내용은 프로그래머 유영천 님이 잘 정리해주신 비디오가 있다.  
+성능 측정도 해당 영상에서 가져왔다.  
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wB74q02x_P0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 (런타임에 이루어지는 것들은 대체로 느린게 당연하다.  
