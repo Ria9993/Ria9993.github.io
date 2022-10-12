@@ -10,9 +10,24 @@ comments: true
 
 별 생각없이 동적할당을 남용하는 경우가 많은데  
 동적할당은 내부적으로 상당히 복잡하다.  
-멀티스레딩을 위해 lock도 걸어야 한다.(없앨 순 있다)  
+```cpp
+// 컴파일러 마다 구현이 다름
+new -> malloc() -> heapAlloc() -> virtualAlloc()
+1. new가 malloc 및 생성자 호출
+2. malloc은 heapAlloc(windowsAPI)을 호출
+3. heapAlloc은 가지고 있는 메모리가 없다면 virtualAlloc에 페이지 단위의 메모리 할당 요청
+4. 페이지 단위의 메모리를 new에서 요청한 사이즈로 잘라서 제공
+
+delete -> free() -> heapFree() -> virtualFree()
+1. free가 소멸자 및 free 호출
+2. free는 heapFree(windowsAPI)를 호출
+3. heapFree는 해제된 메모리를 바로 반환하지 않고 빠른 재할당을 위해 small, large 등으로 bin을 만들어 관리.
+4. 병합할 수 있으면 병합. (병합시점은 모르겠음)
+5. 적당히 쌓인 free chunk가 많으면 virtualFree 호출하여 반환.
+```
+이것 말고도 멀티스레딩을 위해 lock도 걸어야 한다.(없앨 순 있다)  
 그리고 메모리를 스택메모리에 잡지 않기 때문에 메모리 지역성도 하락한다.  
-그래서 느리다.  
+여러모로 느리다.  
 
 그럼 어떻게 하라는 건가?  
 할 수 있다면 스택메모리(지역변수)를 최우선으로 활용한다.  
