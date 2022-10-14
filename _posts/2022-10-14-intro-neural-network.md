@@ -31,7 +31,7 @@ X1, X2가 Y에게 연결되어 있다면 이런느낌.
 
 근대 여기서 문제가 있다.  
 우리가 만든건 **X * W + B** 인데, 이걸 여러개 붙여봤자 곱셈과 덧셈이 많이 붙은 선형적인 1차함수 아닌가?  
-그래서 여기다 비선형 함수인 Activation Function(활성화 함수)라는 걸 추가한다.  
+그래서 여기다 비선형 함수인 Activation Function(활성화 함수)라는 걸 추가해서 비선형적인 신경망을 만들 수 있다.  
 대표적인건 Sigmoid나 ReLU 함수.  
 ![image](https://user-images.githubusercontent.com/44316628/195775588-0b6b8d82-adfa-48cc-852b-69be2308aada.png)  
 
