@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "분기예측확률에 따른 성능향상"
+title:  "분기 예측률에 따른 성능향상 테스트"
 date:   2022-10-12 19:22:00 +0900
 categories: CS
 comments: true
@@ -42,3 +42,7 @@ arr에는 0 혹은 랜덤 수가 들어있다.
 
 ![image](https://user-images.githubusercontent.com/44316628/195467465-0e7e6248-715f-4259-af4d-d5bdea01c269.png)  
 이번엔 실행속도가 기존의 70% 정도까지만 줄어듬  
+
+## 여담  
+여담인데, Branch prediction 할 때 과거 히스토리를 어디다 저장할까 싶었는데  
+따로 테이블 만들어놓고 명령어 주소 하위비트로 직접사상(Direct Mapping) 해서 쓴다 카더라  
