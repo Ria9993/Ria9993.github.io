@@ -25,7 +25,7 @@ X가 가진 값을 그대로 Y에게 전달하면 그건 그냥 대입이 되어
 Weight는 X가 가진 값을 얼마나 Y에게 전달할 것인지 곱연산 할 값이다.  
 Bias는 말 그대로 편향인데, X에서 weight를 거쳐 받은 값에 편향값을 더한다.(합연산)  
 X1, X2가 Y에게 연결되어 있다면 이런느낌.
-![image](https://user-images.githubusercontent.com/44316628/195774272-8294e86f-91d5-4dc7-ba3a-59a513f24d6f.png)  
+![image](https://user-images.githubusercontent.com/44316628/195786104-5e3a1bf9-3b76-422d-90b6-48276f444844.png)  
 
 이걸 많이 붙이면 신경망.  
 ![image](https://user-images.githubusercontent.com/44316628/195774770-770fdf78-1530-415b-ba27-b77cb1c8352d.png)  
