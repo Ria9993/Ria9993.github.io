@@ -13,7 +13,7 @@ comments: true
 먼저 인간의 신경망을 본딴 인공신경망을 구축해보자.  
 
 X와 Y라는 신경세포가 있다고 가정했을 때,  
-세포가 Y 세포에게 신호를 보내는 과정을 생각해보자.  
+X 세포가 Y 세포에게 신호를 보내는 과정을 생각해보자.  
 ![image](https://user-images.githubusercontent.com/44316628/195788279-b271fb9f-438b-4ff8-ad45-b78e3fc52047.png)  
 
 X에서 Y로 신호를 어떻게 전달해야 할까.  
