@@ -56,7 +56,7 @@ weight와 bias는 랜덤값으로 초기화 해두고,
 이게 뭐냐면 신경망의 "예측 값(O)" 과 "정답 값(A)" 의 오차를 **(O - A) ^ 2** 로 정의했을 때,  
 이 오차함수의 기울기를 찾아내, 오차를 줄이는 방향으로 Weight와 Bias를 업데이트 하는것이다.  
 
-![image](https://user-images.githubusercontent.com/44316628/195782936-821d5381-16fb-4e10-8149-5e11622c8de6.png)  
+![image](https://user-images.githubusercontent.com/44316628/196015360-bcd303be-6a53-4be6-9844-0d0cfe88ad83.png)  
 맨처음 오차가 A 지점 이라고 생각해보자.  
 여기서 각 Weight와 Bias들이 이 오차에 끼친 미분을 계산하여 오차가 낮은쪽으로 업데이트를 각각 한다.  
 그러면 오차가 B 지점으로 이동하고, 거기서 한번 더 위 과정으로 학습을 시킨다면,  
