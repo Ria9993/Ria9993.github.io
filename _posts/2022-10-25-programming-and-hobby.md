@@ -9,7 +9,7 @@ comments: true
 당장 프로그래밍 실력도 딸리는데 이렇게 다른 걸 하고있어도 되는걸까 하기도 한다.  
 다른 분야의 취미는 쓸모가 없는걸까?  
 
-![image](https://user-images.githubusercontent.com/44316628/197793388-b2facfca-a740-46b2-b981-9e6eb1c44547.png)  
+![image](https://user-images.githubusercontent.com/44316628/197797400-2d4ac402-1253-4aaf-8786-8ac63b8b1bb9.png)  
 > ##### 왼쪽은 어제 그린 것  
 
 나는 그림을 스트레스 해소의 장치로 이용한다.  
