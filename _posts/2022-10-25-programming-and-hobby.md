@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "프로그래밍과 취미"
+title:  "스트레스와 감정을 컨트롤하기 위한 장치"
 date:   2022-10-25 21:55:00 +0900
 categories: Life
 comments: true
@@ -10,7 +10,7 @@ comments: true
 다른 분야의 취미는 쓸모가 없는걸까?  
 
 ![image](https://user-images.githubusercontent.com/44316628/197793388-b2facfca-a740-46b2-b981-9e6eb1c44547.png)  
-> 왼쪽은 어제 그린 것
+> #### 왼쪽은 어제 그린 것  
 나는 그림을 스트레스 해소의 장치로 이용한다.  
 감정이나 스트레스를 컨트롤하기 힘든 상태가 되면, 이성적인 판단이 힘들어진다.  
 
@@ -20,7 +20,7 @@ comments: true
 정상적인 스트레스도 어느정도 축소시킬 수 있다.  
 
 ![image](https://user-images.githubusercontent.com/44316628/197793873-17e7db38-d1b0-4f1c-befb-765de06fd661.png)  
-> 역으로 행복한 상황에서는 행복한 감정을 극대화 시킬 수도 있다.  
+> #### 역으로 행복한 상황에서는 행복한 감정을 극대화 시킬 수도 있다.  
 
 심리학에서는 이걸 승화라고 표현하는 모양이다.  
 어쨋든 오랜만에 목적을 상기시키기 위해서 적어봤다.  
