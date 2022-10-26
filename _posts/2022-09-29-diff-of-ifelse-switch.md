@@ -22,11 +22,11 @@ int test(int n)
     {
         case 0:
             return 5;
-        case 1: //intentional fallthrough
+        case 1: // fallthrough
         case 2:
         case 3:
             return 10;
-        case 5: //intentional fallthrough
+        case 5: // fallthrough
         case 7:
             return 15;
         default:
@@ -91,14 +91,14 @@ int test(int n)
     {
         case 0:
             return 5;
-        case 1: //intentional fallthrough
+        case 1: // fallthrough
         case 2:
         case 3:
             return 10;
-        case 4: //intentoinal fallthrough
+        case 4: // fallthrough
         case 6:
             return 0;
-        case 5: //intentional fallthrough
+        case 5: // fallthrough
         case 7:
             return 15;
         default:
