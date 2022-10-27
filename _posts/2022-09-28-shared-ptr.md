@@ -51,6 +51,19 @@ class shared_block
 strong_ref가 0이 되면 data의 소멸자만 호출한다.  
 그리고 weak_ref가 0이 되면 그제서야 메모리를 해제한다.  
 
+shared_ptr 소멸자에서 데이터 소멸자만 호출하는 모습
+```cpp
+#if _HAS_IF_CONSTEXPR
+    if constexpr (is_array_v<_Ty>) {
+        _Destroy_range(_Obj, _Obj + extent_v<_Ty>);
+    } else
+#endif // _HAS_IF_CONSTEXPR
+    {
+        _Obj.~_Ty();
+00007FF678651BFF  call        INT::`scalar deleting destructor' (07FF67865153Ch)  
+    }
+```
+
 그래서 std::shared_ptr은 프로그래머가 메모리 해제 시점을 정확히 알기 힘들게 만든다.  
 사용할 일이 있다면 염두하면서 체크할 것.
 
