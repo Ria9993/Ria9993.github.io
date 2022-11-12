@@ -53,7 +53,7 @@ comments: true
 ```  
 음.. 이거 뭔가랑 비슷하다.  
 SOLID 설계원칙에서 다음과 같은 내용이 있는데..  
-````
+```
 Single Responsibility Principle(SRP)
 - 객체는 오직 하나의 책임을 가져야 한다. (객체는 오직 하나의 변경의 이유만을 가져야 한다.)
 Open-Closed Principle(OCP)
