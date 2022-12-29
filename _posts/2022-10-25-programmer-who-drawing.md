@@ -17,7 +17,8 @@ comments: true
 스트레스 해소 수단도 되고 나쁘진 않은 것 같다.  
 그림 그리는 프로그래머라니 개성있지 않은가?  
 
-아래는 자랑스러운 내 그림들.  
+아래는 내 그림들.  
 (못 그리긴 했다)  
+![image](https://user-images.githubusercontent.com/44316628/209925868-f1df4ad2-5f74-4873-aacf-62f2c0e0db58.png)  
 ![image](https://user-images.githubusercontent.com/44316628/197797400-2d4ac402-1253-4aaf-8786-8ac63b8b1bb9.png)  
 ![image](https://user-images.githubusercontent.com/44316628/197793873-17e7db38-d1b0-4f1c-befb-765de06fd661.png)  
