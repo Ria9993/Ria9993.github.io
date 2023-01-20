@@ -8,25 +8,11 @@ comments: true
 성능 병목이 new/delete 에서, 즉 동적할당에서 많이 발생한다는 소리를 많이 듣는다.  
 
 별 생각없이 동적할당을 남용하는 경우가 많은데  
-동적할당은 내부적으로 상당히 복잡하다.  
-```cpp
-// 컴파일러 마다 구현이 다름
-new -> malloc() -> heapAlloc() -> virtualAlloc()
-1. new가 malloc 및 생성자 호출
-2. malloc은 heapAlloc(windowsAPI)을 호출
-3. heapAlloc은 가지고 있는 메모리가 없다면 virtualAlloc에 페이지 단위의 메모리 할당 요청
-4. 페이지 단위의 메모리를 new에서 요청한 사이즈로 잘라서 제공
+동적할당은 복잡하다. (할게 많고 커널까지 내려갔다 와야함)  
 
-delete -> free() -> heapFree() -> virtualFree()
-1. free가 소멸자 및 free 호출
-2. free는 heapFree(windowsAPI)를 호출
-3. heapFree는 해제된 메모리를 바로 반환하지 않고 빠른 재할당을 위해 small, large 등으로 bin을 만들어 관리.
-4. 병합할 수 있으면 병합. (병합시점은 모르겠음)
-5. 적당히 쌓인 free chunk가 많으면 virtualFree 호출하여 반환.
-```
-이것 말고도 멀티스레딩을 위해 lock도 걸어야 한다.(없앨 순 있다)  
+thread-safe를 위해 lock도 걸고... (없앨 순 있다)  
 그리고 메모리를 스택메모리에 잡지 않기 때문에 메모리 지역성도 하락한다.  
-여러모로 느리다.  
+LFH나 bin 같은 효율성을 위해 여러 기술을 붙여도 느리다.  
 
 그럼 어떻게 하라는 건가?  
 할 수 있다면 스택메모리(지역변수)를 최우선으로 활용한다.  
@@ -34,7 +20,7 @@ delete -> free() -> heapFree() -> virtualFree()
 메모리 지역성도 향상.  
 (예로 스택 자료구조를 만들 때 인라인 어셈블리에서 push/pop으로 곧바로 구현할 수도 있다.)  
 
-물론 linked-list 같은 문제들은 지역변수로 불가능하다.  
+물론 linked-list 같은 문제들은 지역변수로 힘들다.  
 이런 경우는 고정된 크기만 할당이 가능한 메모리 풀을 만들어 해결한다.  
 메모리 풀을 사용하면 동적할당은 풀을 만들때 한번만 하면 끝나고,  
 메모리 지역성이 높아지며,  
