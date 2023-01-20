@@ -22,31 +22,12 @@ arr에는 0 혹은 랜덤 수가 들어있다.
             sum += 1;
     }
 ```
-<img width="442" alt="image" src="https://user-images.githubusercontent.com/44316628/213647541-eb773237-307f-4ce7-a4db-47662d661b0b.png">. 
 
 ![image](https://user-images.githubusercontent.com/44316628/195467772-84d61930-e333-4ed3-ba57-0ec93d0d1b5c.png)
 
 실행속도가 기존의 25% 정도까지 줄어듬  
-실행할 때마다 확률이 튀긴 하지만 거의 선형적으로 줄어드는 모습(당연)  
-
-연산이 간단하니 좀 더 연산이 복잡한 경우엔?  
-연산을 좀 더 복잡하게 변경  
-```c
-    for (int i = 0; i < ITER_NUM - 2; i++)
-    {
-        if (arr[i] != 0)
-            sum += (arr[i] * 5) + (arr[i] % 5) 
-                + (arr[i + 1] * 5) + (arr[i + 1] % 5)
-                + (arr[i + 2] * 5) + (arr[i + 2] % 5);
-        else
-            sum -= (arr[i] * 7) + (arr[i] % 7) 
-                + (arr[i + 1] * 7) + (arr[i + 1] % 7)
-                + (arr[i + 2] * 7) + (arr[i + 2] % 7);;
-    }
-```
-
-![image](https://user-images.githubusercontent.com/44316628/195467465-0e7e6248-715f-4259-af4d-d5bdea01c269.png)  
-이번엔 실행속도가 기존의 70% 정도까지만 줄어듬  
+실행할 때마다 확률이 튀긴 하지만 선형적으로 줄어드는 모습 (당연)  
+(음... 4-way superscalar이라고 치고... predict 실패하면 7-8클럭 정도 날아가는..? (잘 모름))
 
 ## 여담  
 여담인데, Branch prediction 할 때 과거 히스토리를 어디다 저장할까 싶었는데  
