@@ -12,6 +12,7 @@ arr에는 0 혹은 랜덤 수가 들어있다.
 10:0 으로 한다면 분기 예측률은 100%에 수렴할 것이다.  
 
 분기 없애는 걸 방지하기 위해 Debug로 컴파일.  
+[**[테스트 코드(github)]**](https://github.com/Ria9993/PlayGround/blob/main/Branch-prediction%20performance%20test/Branch-prediction%20performance%20test/main.cpp)  
 ```c
     for (int i = 0; i < ITER_NUM; i++)
     {
@@ -21,11 +22,12 @@ arr에는 0 혹은 랜덤 수가 들어있다.
             sum += 1;
     }
 ```
-[**[테스트 코드(github)]**](https://github.com/Ria9993/PlayGround/blob/main/Branch-prediction%20performance%20test/Branch-prediction%20performance%20test/main.cpp)  
+<img width="442" alt="image" src="https://user-images.githubusercontent.com/44316628/213647541-eb773237-307f-4ce7-a4db-47662d661b0b.png">. 
+
 ![image](https://user-images.githubusercontent.com/44316628/195467772-84d61930-e333-4ed3-ba57-0ec93d0d1b5c.png)
 
-현대 프로세서의 평균 분기예측률이 90% 정도 되므로 실행속도가 기존의 40% 정도까지 줄어듬  
-실행할 때마다 확률이 튀긴 하지만 거의 선형적으로 줄어드는 모습  
+실행속도가 기존의 25% 정도까지 줄어듬  
+실행할 때마다 확률이 튀긴 하지만 거의 선형적으로 줄어드는 모습(당연)  
 
 연산이 간단하니 좀 더 연산이 복잡한 경우엔?  
 연산을 좀 더 복잡하게 변경  
