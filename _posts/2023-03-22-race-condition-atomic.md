@@ -33,17 +33,17 @@ Cache Coherence에서 "store 할 때 다른 코어의 데이터에 대한 접근
 위의 원리를 보면 생각보다 느리고 lock이 없진 않다.  
 atomic으로 발생할 문제들이 무엇이 있을까.  
 
-# 1. Cache Lock  
+## 1. Cache Lock  
 atomic opertion을 구현되려면,  
 서술했듯이 해당 캐시라인을 들고있는 모든 코어들의 캐시버스를 잠궈야 한다.  
 그렇게 되면 다른 코어들이 전부 방해를 받고 속도가 느려진다.  
 (캐시 일관성 프로토콜도 마찬가지. 거기선 false sharing이란 이름으로 알려져 있음)  
 
-+ atomic operation이 MESI protocol의 확장이라고 설명했는데,  
++atomic operation이 MESI protocol의 확장이라고 설명했는데,  
 실제로 현재 x86의 atomic은 캐시 일관성의 MESI protocol을 사용해 주로 구현된다.  
 MESI protocol이 불가능한 프로세서에서는 메모리 버스 전체를 잠궈버리는 식으로 구현한다.  
 
-# 2. Write-combined buffer flush (mfence)  
+## 2. Write-combined buffer flush (mfence)  
 std::atomic 은 연산이 끝난 후,  
 즉시 다른 코어에서 연산결과를 관측할 수 있어야 하기 때문에 mfence 명령을 동반한다. (or lock 접두)  
 쓰기가 reorder되거나 버퍼링 되면 결과를 곧바로 기록하지 않을 수 있기 때문이다.  
@@ -61,7 +61,7 @@ cpu에는 write-combined buffer라고 하는 버퍼가 있는데 이를 flush해
 캐시라인 단위로 한번에 전송하지 못하고 워드단위로 하나하나 메모리에 써야한다.  
 이러면 엄청난 병목이 발생하게 된다.  
 
-# 성능저하 예시 - spinlock  
+## 성능저하 예시 - spinlock  
 mutex 같은 다른 lock 들도 결국에 atomic operation을 내부적으로 사용해야 한다.  
 (혹은 같은 원리)  
 그 중에 위에서 얘기한 성능저하 문제가 제일 잘 나타나는 경우가 spinlock 이다.  
