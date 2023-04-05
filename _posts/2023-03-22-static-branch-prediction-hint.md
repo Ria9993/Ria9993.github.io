@@ -54,15 +54,15 @@ else
     B_Task();
 ```
 ```nasm
-	cmp   [x], [tmp]   ; compare
-	je    _A_Task      ; jmp equal. x == tmp 라면 _A_Task로 뛴다
+    cmp   [x], [tmp]   ; compare
+    je    _A_Task      ; jmp equal. x == tmp 라면 _A_Task로 뛴다
 _B_Task:
-	call  B_Task
-  jmp   end_if
+    call  B_Task
+    jmp   end_if
 _A_Task:
-  call  A_Task
+    call  A_Task
 end_if:
-  ...
+    ...
 ```
 컴파일러는 둘 중 어느쪽으로 갈 확률이 높은지 모르기 때문에 그냥 이런식으로 배치할 것이다.  
 
@@ -92,14 +92,14 @@ cpu의 branch predictor는 히스토리가 없기 때문에
 여기서 컴파일러 힌트를 사용하면 이렇게 바꿔줄 수 있겠다.  
 확률이 높은 A_Task 코드를 분기 코드 바로 아래에 작성한다.  
 ```nasm
-	cmp   [x], [tmp]   ; compare
-	jne   _B_Task      ; jmp not equal. x != tmp 라면 _B_Task로 뛴다
+    cmp   [x], [tmp]   ; compare
+    jne   _B_Task      ; jmp not equal. x != tmp 라면 _B_Task로 뛴다
 _A_Task:
-  call  A_Task
-	jmp   end_if
+    call  A_Task
+    jmp   end_if
 _B_Task:
-	call  B_Task
+    call  B_Task
 end_if:
-  ...
+    ...
 ```
 이러면 위에서 말한 2가지 문제점이 해결된다.  
