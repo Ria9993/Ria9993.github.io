@@ -15,8 +15,8 @@ load  eax, [i]
 add.  eax, 1
 store [i], eax
 ```  
-캐시 일관성 프로토콜은 저기서 “store를 수행할 때” 만 다른 코어들을 잠근다.(MESI Protocol)  
-그래서 다른 코어의 load 실행을 중간에 막지 못하기 때문에 Race condition 이 존재한다.  
+캐시 일관성 프로토콜은 저기서 “store를 수행할 때” 만 다른 코어들의 캐시라인 버스를 잠근다.(MESI Protocol)  
+그래서 다른 코어의 load 실행을 위 세 단계 중간에 막지 못하기 때문에 Race condition 이 존재한다.  
 
 여기까지가 Race Condition의 발생 이유이고,  
 사실 이 글에서 다룰 건 이 문제를 해결하는 atomic operation 원리와 문제점이다.  
