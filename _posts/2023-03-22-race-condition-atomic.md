@@ -5,7 +5,7 @@ date:   2023-03-22 16:12:00 +0900
 categories: CS
 comments: true
 ---
-Cache Coherence가 보장되는 cpu에서 atomic operation이 왜 필요할까.  
+Cache Coherence가 보장되는 cpu에서 atomic operation(std::atomic)이 왜 필요할까.  
 
 하나의 operation은 여러 단계로 쪼개어질 수 있다.  
 예를 들어 i++ 이라는 코드는 다음과 같은 uop으로 쪼개어질 수 있다.  
@@ -42,6 +42,7 @@ atomic opertion을 구현되려면,
 +atomic operation이 MESI protocol의 확장이라고 설명했는데,  
 실제로 현재 x86의 atomic은 캐시 일관성의 MESI protocol을 사용해 주로 구현된다.  
 MESI protocol이 불가능한 프로세서에서는 메모리 버스 전체를 잠궈버리는 식으로 구현한다.  
+(이건 is_lock_free() 로 확인할 수 있다)
 
 ## 2. Write-combined buffer flush (mfence)  
 std::atomic 은 연산이 끝난 후,  
@@ -60,6 +61,7 @@ cpu에는 write-combined buffer라고 하는 버퍼가 있는데 이를 flush해
 만약 write-combined buffer가 캐시라인 단위로 꽉 채워지지 않았다면  
 캐시라인 단위로 한번에 전송하지 못하고 워드단위로 하나하나 메모리에 써야한다.  
 이러면 엄청난 병목이 발생하게 된다.  
+(CACHE - DRAM 간의 전송은 워드단위만 가능하지만 CACHE - CACHE 간의 전송은 캐시라인 사이즈로 한 방에 전송 가능하다)
 
 ## 성능저하 예시 - spinlock  
 mutex 같은 다른 lock 들도 결국에 atomic operation을 내부적으로 사용해야 한다.  
