@@ -5,9 +5,8 @@ date:   2022-10-25 21:55:00 +0900
 categories: Life
 comments: true
 ---
-가끔 취미로 그림을 그린다.
-아래는 내 그림들.  
-(못 그리네요)  
-![image](https://user-images.githubusercontent.com/44316628/209925868-f1df4ad2-5f74-4873-aacf-62f2c0e0db58.png)  
+가끔 취미로 그리는 그림  
+![tmp](https://github.com/Ria9993/Ria9993.github.io/assets/44316628/01c1caec-9ea1-44d7-8e6d-4829bda98883)  
 ![image](https://user-images.githubusercontent.com/44316628/197797400-2d4ac402-1253-4aaf-8786-8ac63b8b1bb9.png)  
-![image](https://user-images.githubusercontent.com/44316628/197793873-17e7db38-d1b0-4f1c-befb-765de06fd661.png)  
+<!-- [image](https://user-images.githubusercontent.com/44316628/197793873-17e7db38-d1b0-4f1c-befb-765de06fd661.png) -->
+![image](https://github.com/Ria9993/Ria9993.github.io/assets/44316628/a0c2a3ed-b7fe-4b31-b14d-a3ad6e22847a)  
