@@ -55,3 +55,11 @@ height: 100
 width: 100
 
 timezone: Asia/Seoul
+
+# Analytics
+analytics:
+  provider               : "google-gtag" 
+                          # false (default), "google", "google-universal", "google-gtag", "custom"
+  google:
+    tracking_id          : "G-7TNZTX33KE"
+    anonymize_ip         : # true, false (default)
