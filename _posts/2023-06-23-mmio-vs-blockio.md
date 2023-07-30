@@ -41,8 +41,7 @@ ok. 1,2 번은 이해가 된다.
 (TLB shootdown)  
 4. 다른 코어가 해당 IPI(inter-processor interrupt)를 확인하고 TLB수정 후 ACK를 전송.  
 5. Initiator 코어는 모든 ACK를 확인한 후 작업을 재개한다.  
-![image](https://github.com/Ria9993/Ria9993/assets/44316628/b0ded685-6c87-49c1-b464-0ae281f7b6ca)  
-
+![image](/assets/images/20230623_tlbshootdown.png). 
 # 요약  
 멀티스레드 DB에서 memory mapped file을 사용하게 되면,  
 한 코어의 TLB entry가 변경될 시 다른 코어들에게 브로드캐스트 해야하고,(TLB shootdown)  
