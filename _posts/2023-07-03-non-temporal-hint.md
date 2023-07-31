@@ -39,7 +39,7 @@ DRAM→L3→L2를 거쳐 L1까지 위치해 있어야 한다.
 # Write Combined Buffer (Line Fill Buffer)
 
 non-temporal hint 는 사실 무엇보다  
-Write Combined Buffer의 동작에 날개를 달아주는 기능이다. (intel에선 LFB라고 부름)  
+Write Combined Buffer의 동작에 날개를 달아주는 기능이다. (intel에선 Line Fill Buffer, LFB라고 부름)  
 
 현대 CPU들은 보통 load buffer, store buffer, write combined buffer 등의 버퍼를 가지고 있다.  
 load/store buffer 는 단순히 다음 메모리에서 읽기/쓰기 할 명령의 대기열이지만,  
@@ -91,7 +91,7 @@ Burst 모드로 한 번의 트랜잭션동안 캐시라인 단위의 전송을 �
 
 store/load buffer 에 쌓인 작업은 대부분 곧바로 L1에 쓰면 되지만,  
 write-combined buffer에 쌓인 데이터는 캐시에 없을것이기 때문에  
-캐시라인이 전부 채워지지 않았을 경우,   
+WC buffer가 전부 채워지지 않았을 경우,   
 DRAM에서부터 L1까지 데이터를 다시 가져온 다음 써야한다.  
 (DRAM 액세스 레이턴시는 100사이클 이상)  
 
