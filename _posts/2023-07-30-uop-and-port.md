@@ -11,7 +11,7 @@ comments: true
 
 아래 다이어그램은 Intel CPU의 파이프라인을 간략화한 다이어그램이다.  
 [1]<https://uops.info/background.html>  
-<img src="../assets/images/20230703_intelpipe.png" width="500" height="700"/>  
+<img src="/assets/images/20230703_intelpipe.png" width="500" height="700"/>  
 # Fetch & Decode
 CPU의 Front end에서는 캐시에서 명령어를 fetch한 뒤, decoder가 명령어의 해독을 수행한다.  
 
