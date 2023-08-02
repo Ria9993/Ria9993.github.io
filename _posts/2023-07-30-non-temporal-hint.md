@@ -98,3 +98,15 @@ DRAM에서부터 L1까지 데이터를 다시 가져온 다음 써야한다.
 그리고, WC memory를 읽는 행위도 위와 같이 느린 flush 작업을 수행해야 한다.  
 (유영천님 블로그)  
 [https://megayuchi.com/2021/06/06/ddraw-surface-d3d-dynamic-buffer-에서의-write-combine-memory/](https://megayuchi.com/2021/06/06/ddraw-surface-d3d-dynamic-buffer-%EC%97%90%EC%84%9C%EC%9D%98-write-combine-memory/)  
+
+# WC property page 
+굳이 SIMD의 nt 명령어가 아니더라도,  
+일반적인 read/write가 non-temporal로 작동하도록 하는 방법이 있다.  
+바로 WC 속성의 page이다.  
+
+page property에 WC 속성 비트가 존재하고,  
+페이지 접근 시 MMU가 속성 비트를 검사하고 non-temporal 하게 read/write를 수행할 수 있다.  
+
+주로 사용되는 곳은 그래픽스 API에서 Driver가 제공하는 버퍼를 예로 들 수 있다.  
+GPU로 메모리 전송을 사용되는 버퍼이기 때문에,  
+read 할 일이 없으면 WC 속성의 버퍼를 사용하는 것이다.  
