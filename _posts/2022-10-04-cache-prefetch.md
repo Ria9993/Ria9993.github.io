@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "배열 순회 방법에 따른 성능 차이 with Cache"
+title:  "배열 순회 방법에 따른 성능 차이 (Cache prefetcher)"
 date:   2022-10-04 04:25:00 +0900
 categories: CS
 comments: true
@@ -64,5 +64,4 @@ Branch prediction과 비슷하다.
 random 하게 순회하는 방식은 다음 fetch를 예측할 수 없으니 느렸던 것.
 
 +
-(이거 테스트가 캐싱을 고려하지 않은 테스트라 나중에 캐시 사이즈 이상으로 배열을 잡고  
-다시 해봐야 할 것 같다)
+(나중에 캐시 사이즈 고려해서 배열을 잡고 다시 해봐야 할 것 같다)
