@@ -38,17 +38,53 @@ Port라는 창구를 통해 Execution Unit으로 μop을 내보내 실행시키�
 Port 2 에는 Load, AGU 라는 실행유닛들이 연결되어 있다.  
 만약 scheduler가 메모리의 어떤 값을 load하는 μop을 실행시키고 싶다면,  
 해당 μop을 Port 2를 통해 실행유닛으로 전달한다.   
-그러면 load가 실행되는 동안 해당 μop이 port 2 와 port 2에 연결된 모든 실행유닛을 점유한다.  
+그러면 load가 실행되는 동안 해당 μop이 port 2 와 port 2에 연결된 모든 실행유닛(load, AGU)을 점유한다.  
 
 이게 port 라는 개념이다.  
 
-정리하자면 하나의 μop은 하나의 port를 점유한다.  
+하나의 μop은 하나의 port를 점유한다.  
 여러 μop이 동시에 실행될 때,  
 각각 실행되는 port가 다르다면 명령어는 병렬적으로 실행될 수 있다.  
 
 # 중간정리
 μop과 scheduler port 에 대해 간략히 설명했다.  
 이젠 좀 더 디테일한 기능들과 응용에 대해 기술한다.  
+
+# Port pressure
+앞서 각각의 port는 병렬실행될 수 있다고 했다.  
+그러면 당연히 최대한 모든 port를 동시에 사용하는게 좋을것이다.  
+
+이와 관련해 매우 재밌는 문서를 찾았다.  
+<https://www.intel.com/content/dam/doc/manual/64-ia-32-architectures-optimization-manual.pdf>  
+551페이지  
+11.11.2 (Design Algorithm With Fewer Shuffles)  
+shuffle 연산은 skylake에서 오직 port 5 에서만 실행이 가능하다.  
+다른 포트는 shuffle 실행유닛이 없다.  
+
+위 문서에는 8x8 전치행렬을 구하는데 shuffle 24개를 사용해본다.  
+하지만 shuffle만 24개를 사용하면 port 5에만 압력이 강해지고 다른 포트는 노는 상황이 발생한다.  
+그래서 해결책으로 insert [mem]을 8개를 섞어  
+shuffle 16개, insert [mem] 8개로 port 5의 압력을 줄였더니  
+무려 70%(!!!)의 성능향상을 해냈다는 내용이다.  
+
+# Port pressure 2 (about AGU on Port 7)
+비슷한 내용이 또 있다.  
+하스웰-스카이레이크 아키텍쳐에서는 port 7에 AGU(Address Generation Unit)가 있는데,  
+여기 달려있는 AGU가 indexed address를 계산하지 못한다.  
+(159 페이지 11.12 <https://www.agner.org/optimize/microarchitecture.pdf>)  
+
+무슨 뜻이냐면..  
+```c
+mov [ebx+esi] // indexed address  
+mov [ebx] // non-indexed address  
+```
+
+이 중에서 indexed address를 port 7에 있는 AGU가 유일하게 처리하지 못한다.  
+다른 포트에 있는 AGU를 사용해야 한다.  
+
+그래서 indexed addressing mode를 자제하는것이  
+잠재적으로 port 7까지 사용하여 성능향상을 기대할 수 있다.   
+
 # uop-fusion (micro-fusion)
 위에서  
 i++  
@@ -91,41 +127,6 @@ vmovups 1uop, vshufps 1uop.
 명령어 바이트가 약간 차이나는 것 빼고 실행속도는 동일하다.  
 
 cpu 아키텍쳐마다 micro-fusion 조건이 다르니 이건 여러 메뉴얼을 참조하자.  
-
-# Port pressure
-앞서 각각의 port는 병렬실행될 수 있다고 했다.  
-그러면 당연히 최대한 모든 port를 동시에 사용하는게 좋을것이다.  
-
-이와 관련해 매우 재밌는 문서를 찾았다.  
-<https://www.intel.com/content/dam/doc/manual/64-ia-32-architectures-optimization-manual.pdf>  
-551페이지  
-11.11.2 (Design Algorithm With Fewer Shuffles)  
-shuffle 연산은 skylake에서 오직 port 5 에서만 실행이 가능하다.  
-다른 포트는 shuffle 실행유닛이 없다.  
-
-위 문서에는 8x8 전치행렬을 구하는데 shuffle 24개를 사용해본다.  
-하지만 shuffle만 24개를 사용하면 port 5에만 압력이 강해지고 다른 포트는 노는 상황이 발생한다.  
-그래서 해결책으로 insert [mem]을 8개를 섞어  
-shuffle 16개, insert [mem] 8개로 port 5의 압력을 줄였더니  
-무려 70%(!!!)의 성능향상을 해냈다는 내용이다.  
-
-# Port pressure 2 (about AGU on Port 7)
-비슷한 내용이 또 있다.  
-하스웰-스카이레이크 아키텍쳐에서는 port 7에 AGU(Address Generation Unit)가 있는데,  
-여기 달려있는 AGU가 indexed address를 계산하지 못한다.  
-(159 페이지 11.12 <https://www.agner.org/optimize/microarchitecture.pdf>)  
-
-무슨 뜻이냐면..  
-```c
-mov [ebx+esi] // indexed address  
-mov [ebx] // non-indexed address  
-```
-
-이 중에서 indexed address를 port 7에 있는 AGU가 유일하게 처리하지 못한다.  
-다른 포트에 있는 AGU를 사용해야 한다.  
-
-그래서 indexed addressing mode를 자제하는것이  
-잠재적으로 port 7까지 사용하여 성능향상을 기대할 수 있다.   
 
 # uop-cache(DSB(Decoded Stream Buffer))  
 decode는 비용이 높다.  
