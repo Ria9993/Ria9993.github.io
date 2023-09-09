@@ -150,3 +150,10 @@ LSD는 decoder가 decode가 완료된 uop을 보내는 instruction queue에 내�
 
 그래서 DSB보다 빠르고,  
 다만 캐시 크기가 작아서 타이트한 loop에만 동작할 수 있다.  
+
+# 여담 + 2023-09-09
+뉴스에서 인텔이 cpu 버그에 대해 마이크로코드를 패치한다는 내용을 봤다.  
+<img src="/assets/images/20230909-intel-micro-patch.png" width="700" height="700"/>  
+decoder에서 uop이 어떻게 분해되거나,  
+어떻게 uop을 처리할지는 하드와이어가 아닌 프로그래머블하게 되어있는 모양이다.  
+이런 것 때문에 더더욱 DSB의 존재같은 것이 유용할 수 있을 것 같다.  
