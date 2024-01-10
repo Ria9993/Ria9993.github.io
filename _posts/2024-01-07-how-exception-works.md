@@ -141,7 +141,7 @@ LSDA가 바로 call site에 대한 정보가 기록되는 테이블이다.
 저 라벨을 따라가보자.  
 <br>
 
-![image](/assets/images/20240107-10.png)  
+<img src="/assets/images/20240107-10.png" width="400" height="350"/>   
 
 149-152 줄이 call site #1,  
 153-156 줄이 call site #2의 범위를 담고 있다.  
