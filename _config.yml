@@ -27,6 +27,13 @@ url: "https://ria9993.github.io" # the base hostname & protocol for your site, e
 # twitter_username: jekyllrb
 highlighter: rouge
 
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
 # Build settings
 #theme: plainwhite
 remote_theme: samarsault/plainwhite-jekyll
