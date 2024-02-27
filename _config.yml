@@ -33,6 +33,7 @@ highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
+latex: true
 
 # Build settings
 #theme: plainwhite
