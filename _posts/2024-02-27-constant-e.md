@@ -4,6 +4,7 @@ title:  "자연상수 e"
 date:   2024-02-28 00:08:00 +0900
 categories: CS
 comments: true
+use_math: true
 ---
 # 개요
 요즘 자연로그($ln$)가 자주 보여서 알아두면 평생 쓰겠다 싶어 공부시작.  
