@@ -45,14 +45,14 @@ $
 
 $\bf \{f(x) = 1\}$   
 
-![](/assets/images/20240228.png =200x200)  
+![image](/assets/images/20240228.png =200x200)  
 원금에 대한 그래프는 위와 같이 상수 함수로 표현할 수 있다.  
 그리고 이 원금에 대한 이자는 이 그래프의 넓이를 구하는 식으로 표현할 수 있을 것이다.   
 
 
 $\bf \{y = x\}$  
 
-![](/assets/images/20240228-1.png =200x200)  
+![image](/assets/images/20240228-1.png =200x200)  
 y = 1 그래프를 아주 잘게 쪼갠다면 x가 증가할 때마다 넓이가 x만큼 증가한다고 볼 수 있으므로  
 넓이에 대한 그래프는 y = x로 표현할 수 있다.  
 
@@ -65,7 +65,7 @@ y = 1 그래프를 아주 잘게 쪼갠다면 x가 증가할 때마다 넓이가
 
 $\bf \{y = \frac{x^2}{2}\}$  
 
-![](/assets/images/20240228-2.png =200x200)  
+![image](/assets/images/20240228-2.png =200x200)  
 위 함수로 이자에 대한 이자를 표현할 수 있다.  
 
 이런식으로 이자에 대한 이자, 이자에 대한 이자에 대한 이자... 를 무한히 반복하여 이자에 대한 함수를 구하고  
@@ -78,19 +78,19 @@ $e = 1 + 1 + \frac{x}{1} + \frac{x^2}{2} + ... $
 그래프의 넓이를 구하면 되는데, 이제 단순한 삼각형이 아니므로 넓이를 곧바로 구할 수 없다.  
 
 $\bf \{y = \frac{x^2}{2}\}$  
-![](/assets/images/20240228-2.png =200x200)  
+![image](/assets/images/20240228-2.png =200x200)  
 위 그래프의 넓이를 구하기 위해 무수히 쪼갠다는 아이디어를 사용한다.(극한(?))  
 
 <br>  
 
-![](/assets/images/20240228-3.png =200x200)  
+![image](/assets/images/20240228-3.png =200x200)  
 일단 해당 그래프를 절반으로 쪼개어 넓이를 구해보자.  
 두 개의 직사각형에 대한 넓이를 구하는 것이다.  
 물론 두 직사각형의 넓이는 그래프의 넓이와 오차가 크지만,  
 
 <br>  
 
-![](/assets/images/20240228-4.png =200x200)  
+![image](/assets/images/20240228-4.png =200x200)  
 무수히 많이 쪼개면 그래프의 넓이에 수렴할 것이다.  
 
 그렇다면 이를 식으로 표현해보자.  
@@ -100,11 +100,11 @@ $\bf \{y = \frac{x^2}{2}\}$
 $
 \large
 \lim\limits_{n \to \infty} \ \sum\limits_{k=1}^{n} [ \frac{x}{n} \cdot \frac{(k \frac{x}{n})^2}{2} ]
-\\
+\\  
 \lim\limits_{n \to \infty} \ \sum\limits_{k=1}^{n} [ \frac{x}{n} \cdot k^2 \cdot \frac{x^2}{n^2} \cdot \frac{1}{2} ]
-\\
+\\  
 \lim\limits_{n \to \infty} \ \sum\limits_{k=1}^{n} [ \frac{x^3}{2n^3} \cdot k^2 ]
-\\
+\\  
 \lim\limits_{n \to \infty} \ \frac{x^3}{2n^3} \cdot \sum\limits_{k=1}^{n} k^2
 $
 
@@ -122,12 +122,12 @@ Telescope sum을 사용한다.
 $\sum\limits_{i=0}^{k} [(i + 1)^3 - i^3]$   
 이 식을 주르륵 다 적어보자.  
 $
-1^3 - 0^3 +\\
-2^3 - 1^3 +\\
-3^3 - 2^3 +\\
-4^3 - 3^3 +\\
-... \\
-(k + 1)^3 - k^3 \\
+1^3 - 0^3 +\\  
+2^3 - 1^3 +\\  
+3^3 - 2^3 +\\  
+4^3 - 3^3 +\\  
+... \\  
+(k + 1)^3 - k^3 \\  
 $
 
 최종적으로 서로 상쇄되어 남은 $(k + 1)^3$ 이 나온다.  
@@ -156,7 +156,7 @@ $\sum\limits_{i=0}^{k} i^2 = \frac{1}{6}[2(k + 1)^3 - 3k(k + 1) - 2(k + 1)]$
 ## $\bf \{y = \frac{x^2}{2}\}$  적분
 
 
-![](/assets/images/20240228-4.png =200x200)  
+![image](/assets/images/20240228-4.png =200x200)  
 $\bf \{y = \frac{x^2}{2}\}$  
 
 다시 돌아와서, 이제 위 그래프의 넓이를 구할 수 있게 되었다.  
@@ -185,10 +185,10 @@ n은 극한이므로 최고차항만 남기면 된다.
 $
 \large
 \lim\limits_{n \to \infty} \ \frac{x^3}{2n^3} \cdot \frac{1}{6}[2n^3]
-\\
+\\  
 \large
 \lim\limits_{n \to \infty} \ \frac{x^3}{2n^3} \cdot \frac{2n^3}{6}
-\\
+\\  
 \large
 \lim\limits_{n \to \infty} \ \frac{x^3}{6}
 $
@@ -202,7 +202,7 @@ $\large y = \frac{x^2}{2}$ 에 대한 적분은 $\large \frac{x^3}{6}$ 이다.
 $
 \Large
 \lim\limits_{n \to \infty} \ \sum\limits_{k=1}^{n} [ \frac{x}{n} \cdot \frac{(k \frac{x}{n})^3}{6} ]
-\\
+\\  
 \Large
 \lim\limits_{n \to \infty} \ \frac{x^4}{6n^4} \cdot \sum\limits_{k=1}^{n} k^3
 $
@@ -233,7 +233,7 @@ $\sum\limits_{i=0}^{k} 1$ 은 $k + 1$ 으로 대입한다.
 
 $
 \sum\limits_{i=0}^{k} i^3 = \frac{1}{4}[(k + 1)^4 - [2(k + 1)^3 - 3k(k + 1) - 2(k + 1)] - 4\frac{k(k + 1)}{2} - (k + 1)]
-\\
+\\    
 \sum\limits_{i=0}^{k} i^3 = \frac{1}{8}[2(k + 1)^4 - 4(k + 1)^3 + 6k(k + 1) + 4(k + 1) - 4k(k + 1) - 2(k + 1)]
 $
 
@@ -253,10 +253,10 @@ $
 $
 \Large
 \lim\limits_{n \to \infty} \ \frac{x^4}{6n^4} \cdot \frac{1}{8} \cdot 2(n + 1)^4
-\\
+\\  
 \Large
 \lim\limits_{n \to \infty} \ \frac{x^4}{6n^4} \cdot \frac{1}{4} \cdot (n + 1)^4
-\\
+\\  
 \Large
 \lim\limits_{n \to \infty} \ \frac{x^4}{24n^4} \cdot n^4 + 4n^3 + 6n^2 + 4n + 1
 $
@@ -265,7 +265,7 @@ $
 $
 \Large
 \lim\limits_{n \to \infty} \ \frac{x^4}{24n^4}  \cdot n^4
-\\
+\\  
 \Large
 \lim\limits_{n \to \infty} \ \frac{x^4}{24}
 $
@@ -309,10 +309,10 @@ $\large\frac{x^d}{a}$를 적분하면 $\large\frac{x^{d+1}}{a(d+1)}$ 이 될 것
 $
 \Large
 e \ = 1 + 1 + \frac{x}{1} + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24} + ...
-\\
+\\  
 \Large
 \quad = 1 + 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + ...
-\\
+\\  
 $
 
 최종적으로 $e$는 다음과 같이 유도된다.  
