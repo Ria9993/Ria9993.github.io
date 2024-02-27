@@ -15,6 +15,7 @@ use_math: true
 
 그래서 그냥 이것저것 모르는 것들은 배우면서 자연상수 $e$를 유도해 보았다.
 
+***
 # $e$ 의 정의
 일단 이자가 100%인 경우가 있다고 생각해보자.  
 이 경우에는 원금 1원을 넣으면 1년 후 2원이 된다.  
@@ -30,6 +31,7 @@ use_math: true
 어떠한 값에 수렴한다.  
 이를 자연상수 $e$라고 정의한다.  
 
+***
 # 유도 과정
 일단 이를 식으로 표현해보자.  
 원금 1원에 이자를 1년에 동일한 간격으로 무한히 많은 $n$번 받는다고 하자.  
@@ -73,6 +75,7 @@ $\bf \{y = \frac{x^2}{2}\}$
 
 $e = 1 + 1 + \frac{x}{1} + \frac{x^2}{2} + ... $  
 
+***
 ## 이자 그래프의 넓이 구하기
 아까 구한 $y = \frac{x^2}{2}$ 이자에 대한 이자를 또 구하려면  
 그래프의 넓이를 구하면 되는데, 이제 단순한 삼각형이 아니므로 넓이를 곧바로 구할 수 없다.  
@@ -81,14 +84,12 @@ $\bf \{y = \frac{x^2}{2}\}$
 <img src="/assets/images/20240228-2.png" width="200" height="200">  
 위 그래프의 넓이를 구하기 위해 무수히 쪼갠다는 아이디어를 사용한다.(극한(?))  
 
-<br>  
 
 <img src="/assets/images/20240228-3.png" width="200" height="200">  
 일단 해당 그래프를 절반으로 쪼개어 넓이를 구해보자.  
 두 개의 직사각형에 대한 넓이를 구하는 것이다.  
 물론 두 직사각형의 넓이는 그래프의 넓이와 오차가 크지만,  
 
-<br>  
 
 <img src="/assets/images/20240228-4.png" width="200" height="200">  
 무수히 많이 쪼개면 그래프의 넓이에 수렴할 것이다.  
@@ -98,7 +99,6 @@ $\bf \{y = \frac{x^2}{2}\}$
 직사각형의 가로는 $\frac{x}{n}$이고, 세로는 그래프 식 $\frac{x^2}{2}$에 직사각형의 끝 $x$좌표인 $k \cdot \frac{x}{n}$를 대입한 값이다.  
 
 $
-\large
 \lim\limits_{n \to \infty} \ \sum\limits_{k=1}^{n} [ \frac{x}{n} \cdot \frac{(k \frac{x}{n})^2}{2} ]
 $  
 $  
@@ -114,12 +114,12 @@ $
 이제 $\sum\limits_{k=1}^{n} k^2$를 구해야 하는데,  
 $\sum\limits_{k=1}^{n} k$ 처럼 가우스 합으로 바로 구할 수 없으므로 유도해보자...    
 
+***
 ## $\sum\limits_{k=1}^{n} k^2$ 풀기
 
 일단 $\sum\limits_{k=1}^{n} k^2$는 3차식으로 표현할 수 있을 것이다.  
 그래서 $\sum\limits_{k=1}^{n} k^3$ 형식에서 유도할 것.  
 
-<br>  
 
 Telescope sum을 사용한다.  
 $\sum\limits_{i=0}^{k} [(i + 1)^3 - i^3]$   
@@ -136,15 +136,11 @@ $(k + 1)^3 - k^3$
 그러므로  
 $\sum\limits_{i=0}^{k} [(i + 1)^3 - i^3] = (k + 1)^3$  
 
-<br>  
-
 그리고 여기서 $(i + 3)^3 - i^3 = 3i^2 + 3i + 1$ 이므로, 다음과 같이 치환할 수 있다.  
 
 $
 \sum\limits_{i=0}^{k} [(i + 1)^3 - i^3] = 3\sum\limits_{i=0}^{k} i^2 + 3\sum\limits_{i=0}^{k} i + \sum\limits_{i=0}^{k} 1 = (k + 1)^3
 $  
-
-<br>  
 
 $\sum\limits_{i=0}^{k} i$ 는 가우스 합으로  $\frac{k(k + 1)}{2}$ 가 되고,    
 $\sum\limits_{i=0}^{k} 1$ 은 $k + 1$ 이다.  
@@ -154,6 +150,7 @@ $\sum\limits_{i=0}^{k} i^2 = \frac{1}{3}[(k + 1)^3 - \frac{3k(k + 1)}{2} - (k + 
 $\frac{1}{6}$ 으로 정리하자.  
 $\sum\limits_{i=0}^{k} i^2 = \frac{1}{6}[2(k + 1)^3 - 3k(k + 1) - 2(k + 1)]$
 
+***
 ## $\bf \{y = \frac{x^2}{2}\}$  적분
 
 
@@ -174,7 +171,6 @@ $
 \lim\limits_{n \to \infty} \ \frac{x^3}{2n^3} \cdot \frac{1}{6}[2(n + 1)^3 - 3n(n + 1) - 2(n + 1)]
 $
 
-<br>  
 
 일단 괄호를 다 풀자.  
 $
@@ -198,16 +194,15 @@ $
 
 $\large y = \frac{x^2}{2}$ 에 대한 적분은 $\large \frac{x^3}{6}$ 이다.  
 
+***
 ## $\bf \{y = \frac{x^3}{6}\}$  적분
 우리는 이자에 대한 이자에 대한 이자... 를 구해야 하므로 이를 다시 적분해보자.  
 
 똑같이 무수히 많은 직사각형으로 쪼개어 넓이를 구하면 된다.  
 $
-\Large
 \lim\limits_{n \to \infty} \ \sum\limits_{k=1}^{n} [ \frac{x}{n} \cdot \frac{(k \frac{x}{n})^3}{6} ]
 $  
 $ 
-\Large
 \lim\limits_{n \to \infty} \ \frac{x^4}{6n^4} \cdot \sum\limits_{k=1}^{n} k^3
 $
 
@@ -217,7 +212,6 @@ $
 똑같이 $\sum\limits_{k=1}^{n} k^3$ 는 4차식으로 표현할 수 있을 것이라 생각하고,  
 $\sum\limits_{k=1}^{n} k^4$ 형식에서 유도한다.  
 
-<br>  
 
 $\sum\limits_{i=0}^{k} [(i + 1)^4 - i^4]$   
 자 여기서 시작하자.  
@@ -248,6 +242,7 @@ $
 \sum\limits_{i=0}^{k} i^3 = \frac{1}{8}[2(k + 1)^4]
 $
 
+***
 ## $\bf \{y = \frac{x^3}{6}\}$  적분
 $
 \Large
@@ -256,29 +251,26 @@ $
 이제 $\sum\limits_{k=1}^{n} k^3$를 구했으니 대입하자.  
 
 $
-\Large
 \lim\limits_{n \to \infty} \ \frac{x^4}{6n^4} \cdot \frac{1}{8} \cdot 2(n + 1)^4
 $  
 $
-\Large
 \lim\limits_{n \to \infty} \ \frac{x^4}{6n^4} \cdot \frac{1}{4} \cdot (n + 1)^4
 $  
 $  
-\Large
 \lim\limits_{n \to \infty} \ \frac{x^4}{24n^4} \cdot n^4 + 4n^3 + 6n^2 + 4n + 1
 $
 
 최고 차항만 남기고 약분.  
 $
-\Large
 \lim\limits_{n \to \infty} \ \frac{x^4}{24n^4}  \cdot n^4
-\\  
-\Large
+$  
+$
 \lim\limits_{n \to \infty} \ \frac{x^4}{24}
 $
 
 $\large y = \frac{x^3}{6}$ 에 대한 적분은 $\large \frac{x^4}{24}$ 이다.  
 
+***
 # 정리
 이때까지 구한 것을 정리하면 다음과 같다.  
 $
@@ -286,7 +278,6 @@ $
 e = 1 + 1 + \frac{x}{1} + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24} + ...
 $  
 
-<br>  
 
 적분을 반복할 때마다 $x$의 차수가 1씩 증가하고,  
 
@@ -294,11 +285,9 @@ $x^n$을 적분할 때 필요한 $\sum\limits_{k=1}^{n} k^{n} $은 $\sum\limits_
 이 때 $\sum\limits_{k=1}^{n} k^{n+1} $를 유도하는 과정에서  
 $(k + 1)^{n+1} - k^{n+1}$ 는 $\{ (n+1) \cdot k^n + ... + ... \}$ 꼴로 풀리는 것을 알 수 있었다.   
 
-<br>  
 
 그러므로  
 $
-\Large
 \lim\limits_{n \to \infty} \ \frac{x^4}{6n^4} \cdot \sum\limits_{k=1}^{n} k^3
 $  
 다음과 같은 적분을 계산할 때,  
@@ -314,11 +303,9 @@ $\large\frac{x^d}{a}$를 적분하면 $\large\frac{x^{d+1}}{a(d+1)}$ 이 될 것
 
 그러므로 이를 $e$ 식에 대입하면,  
 $
-\Large
 e \ = 1 + 1 + \frac{x}{1} + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24} + ...
 $  
 $
-\Large
 \quad = 1 + 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + ...
 \\  
 $
