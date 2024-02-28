@@ -92,7 +92,7 @@ $\bf \{y = \frac{x^2}{2}\}$
 
 
 <img src="/assets/images/20240228-4.png" width="200" height="200">  
-무수히 많이 쪼개면 그래프의 넓이에 수렴할 것이다.  
+무수히 많이 쪼개면 그래프의 넓이에 근사할 것이다.  
 
 그렇다면 이를 식으로 표현해보자.  
 그래프를 직사각형 $n$개로 무수히 쪼개어 넓이를 모두 더한다.    
@@ -313,5 +313,5 @@ $
 최종적으로 $e$는 다음과 같이 유도된다.  
 $
 \Large
-e = \lim\limits_{n \to \infty} \sum\limits_{i=0}^{n} \frac{x^i}{i!}
+e^x = \lim\limits_{n \to \infty} \sum\limits_{i=0}^{n} \frac{x^i}{i!}
 $
