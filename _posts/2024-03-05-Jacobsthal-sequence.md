@@ -115,7 +115,7 @@ $$
 
 여기서 $\frac{1}{1 - x}$의 형태는 무한등비급수를 사용할 수 있다.  
 원래 ${\|x\|} < 1$일 때만 성립하는데,  
-우리가 사용하는 생성함수는 Formal power series이므로 covergence를 무시해도 된다.  
+우리가 사용하는 생성함수는 formal power series이므로 coverage를 무시해도 된다.  
 $$
 \begin{align*}
 G(x) & = \frac{1}{3} \cdot \frac{1}{1 - 2x} - \frac{1}{3} \cdot \frac{1}{1 - (-x)} \\  
