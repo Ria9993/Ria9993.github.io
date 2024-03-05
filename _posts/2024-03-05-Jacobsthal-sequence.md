@@ -48,7 +48,7 @@ $$ G(x) = a_0 + a_1x + a_2x^2 + a_3x^3 + ... = \sum\limits_{n=0}^{\infty} a_nx^n
 생성함수에 맞게 $ \sum\limits_{n=0}^{\infty} a_nx^n $으로 정리하면,  
 
 $$
-\begin{align*}
+\begin{aligned}
 a_n & = a_{n-1} + 2a_{n-2} \\  
 a_nx^n & = a_{n-1}x^n + 2a_{n-2}x^n \\  
 \sum\limits_{n=2}^{\infty} a_nx^n & = \sum\limits_{n=2}^{\infty} a_{n-1}x^n + 2\sum\limits_{n=2}^{\infty} a_{n-2}x^n \\  
@@ -58,7 +58,7 @@ G(x) - x & = xG(x) + 2x^2G(x) \\
 G(x) - xG(x) - 2x^2G(x) & = x \\  
 G(x)(1 - x - 2x^2) & = x \\  
 G(x) & = \frac{x}{1 - x - 2x^2}  
-\end{align*}
+\end{aligned}
 $$  
 
 이렇게 수열의 생성함수를 $ x $에 대하여 구할 수 있는데,  
@@ -80,49 +80,49 @@ $ \frac{x}{1 - x - 2x^2} $ 는 분모와 분자가 x에 대한 다항식이므�
 
 $$ 1 - x - 2x^2 = 0 $$  
 $$ 
-\begin{align*}  
+\begin{aligned}  
 x & = \frac{-1 \pm \sqrt{1 + 8}}{-4} = \frac{-1 \pm 3}{-4} \\  
 & = \frac{1}{2} \ or -1
-\end{align*}  
+\end{aligned}  
 $$  
 $x = \frac{1}{2} \ or -1$ 이므로 부분분수분해 형태로 나타내도록 하자.  
 
 $$
-\begin {align*}
+\begin {aligned}
 G(x) & = \frac{x}{1 - x - 2x^2} \\  
 & = \frac{x}{(x - \frac{1}{2})(x + 1)} \\  
 & = \frac{x}{(1 - 2x)(1 - (-x))} \\  
-\end{align*}
+\end{aligned}
 $$  
 
 $$
-\begin{align*}
+\begin{aligned}
 \frac{x}{(1 - 2x)(1 - (-x))} & = \frac{A}{1 - 2x} + \frac{B}{1 - (-x)} \\  
 x & = A(1 - (-x)) + B(1 - 2x) \\  
 \\  
 A  = \frac{1}{3} & \quad when \ x = -1 \\  
 B = -\frac{1}{3} & \quad when \ x = \frac{1}{2} \\   
-\end{align*}
+\end{aligned}
 $$  
 후에 무한등비급수를 사용할 것이므로 $(1 - x)$ 형태로 정리했다.  
 
 이제 $G(x)$의 부분분수분해 식에 위에서 구한 $A, B$를 대입해보자.  
 $$
-\begin{align*}
+\begin{aligned}
 G(x) & = \frac{1}{3} \cdot \frac{1}{1 - 2x} - \frac{1}{3} \cdot \frac{1}{1 - (-x)}
-\end{align*}
+\end{aligned}
 $$  
 
 여기서 $\frac{1}{1 - x}$의 형태는 무한등비급수를 사용할 수 있다.  
 원래 ${\|x\|} < 1$일 때만 성립하는데,  
 우리가 사용하는 생성함수는 formal power series이므로 coverage를 무시해도 된다.  
 $$
-\begin{align*}
+\begin{aligned}
 G(x) & = \frac{1}{3} \cdot \frac{1}{1 - 2x} - \frac{1}{3} \cdot \frac{1}{1 - (-x)} \\  
 & = \frac{1}{3} \sum\limits_{n=0}^{\infty} (2x)^n - \frac{1}{3} \sum\limits_{n=0}^{\infty} (-x)^n \\  
 & = \sum\limits_{n=0}^{\infty} \frac{1}{3} \cdot 2^n \cdot x^n - \sum\limits_{n=0}^{\infty} \frac{1}{3} \cdot (-1)^n \cdot x^n \\  
 & = \sum\limits_{n=0}^{\infty} [\frac{2^n - (-1)^n}{3}] \cdot x^n \\  
-\end{align*}
+\end{aligned}
 $$  
 
 우리는 $n$번 항의 계수를 구하는 것이 목적이므로  
