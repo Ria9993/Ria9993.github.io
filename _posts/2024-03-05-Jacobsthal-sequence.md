@@ -296,12 +296,12 @@ $$
 \begin{aligned}
 (T - \lambda I)\vec{v} & = \vec{0} \\ 
 \begin{bmatrix} 1 - \lambda & 2 \\ 1 & -\lambda \end{bmatrix}\vec{v} & = \vec{0} \\
-if \ \lambda = 2, \ \begin{bmatrix} -1 & 2 \\ 1 & -2 \end{bmatrix}\vec{v} & = \vec{0} \\
+if \ \lambda = 2&, \ \begin{bmatrix} -1 & 2 \\ 1 & -2 \end{bmatrix}\vec{v} = \vec{0} \\
 v_1 - 2v_2 & = 0 \\
 v_1 & = 2v_2 \\
 \vec{v} & = \begin{bmatrix} 2 \\ 1 \end{bmatrix} \\
 \\
-if \ \lambda = -1, \ \begin{bmatrix} 2 & 2 \\ 1 & 1 \end{bmatrix}\vec{v} & = \vec{0} \\
+if \ \lambda = -1&, \ \begin{bmatrix} 2 & 2 \\ 1 & 1 \end{bmatrix}\vec{v} = \vec{0} \\
 2v_1 + 2v_2 & = 0 \\
 v_1 + v_2 & = 0 \\
 v_1 & = -v_2 \\
@@ -314,7 +314,7 @@ $$
 기존 선형변환 $T$를 좌표계변환 -> $\hat{T}$변환 -> 좌표계복구 로 치환.  
 $$
 \begin{aligned}
-B = 
+B & = 
 \begin{bmatrix}
 2 & 1 \\
 1 & -1
@@ -326,6 +326,7 @@ B^{-1}TB & = \hat{T} \\
 $$  
 
 이제 $\hat{T}$를 구하면 이를 제곱하여 $a_n$을 구할 수 있을 것이다.  
+
 $$
 \begin{aligned}
 \hat{T} & = B^{-1}TB \\
@@ -333,11 +334,24 @@ $$
 \\
 \hat{T} & = B^{-1}TB = \begin{bmatrix} \frac{1}{3} & \frac{1}{3} \\ \frac{1}{3} & -\frac{2}{3} \end{bmatrix}\begin{bmatrix} 1 & 2 \\ 1 & 0 \end{bmatrix}\begin{bmatrix} 2 & 1 \\ 1 & -1 \end{bmatrix} \\
 \hat{T} & = B^{-1}TB = \begin{bmatrix} 2 & 0 \\ 0 & -1 \end{bmatrix}
-\\
-T = B\hat{T}B^{-1} & = \begin{bmatrix} 2 & 1 \\ 1 & -1 \end{bmatrix}\begin{bmatrix} 2 & 0 \\ 0 & -1 \end{bmatrix}\begin{bmatrix} \frac{1}{3} & \frac{1}{3} \\ \frac{1}{3} & -\frac{2}{3} \end{bmatrix} \\
-T^{n-1} & = \begin{bmatrix} 2 & 1 \\ 1 & -1 \end{bmatrix}\begin{bmatrix} 2^{n-1} & 0 \\ 0 & (-1)^{n-1} \end{bmatrix}\begin{bmatrix} \frac{1}{3} & \frac{1}{3} \\ \frac{1}{3} & -\frac{2}{3} \end{bmatrix} \\
 \end{aligned}
 $$  
+
+$$
+\begin{aligned}
+T = B\hat{T}B^{-1} & = \begin{bmatrix} 2 & 1 \\ 1 & -1 \end{bmatrix}\begin{bmatrix} 2 & 0 \\ 0 & -1 \end{bmatrix}\begin{bmatrix} \frac{1}{3} & \frac{1}{3} \\ \frac{1}{3} & -\frac{2}{3} \end{bmatrix} \\
+T^{n-1} & = \begin{bmatrix} 2 & 1 \\ 1 & -1 \end{bmatrix}\begin{bmatrix} 2^{n-1} & 0 \\ 0 & (-1)^{n-1} \end{bmatrix}\begin{bmatrix} \frac{1}{3} & \frac{1}{3} \\ \frac{1}{3} & -\frac{2}{3} \end{bmatrix}
+\end{aligned}
+$$  
+
+그런데 사실 $\hat{T}$를 직접 구할 필요는 없다.  
+왜냐하면 선형변환 $T$와 그 고유값 $\lambda^d$로 이루어진 대각행렬의 선형변환은,  
+Aigenvector로 이루어진 Aigenbasis $B$ 좌표계에서 동일한 선형변환이기 때문이다.  
+
+그래서 구해진 $\hat{T}$가 우리가 구한 $\lambda_0, \lambda_1 = 2, -1$ 을 원소로 하는 대각행렬인 것이다.  
+$$
+\hat{T} = \begin{bmatrix} 2 & 0 \\ 0 & -1 \end{bmatrix} = \begin{bmatrix} \lambda_0 & 0 \\ 0 & \lambda_1 \end{bmatrix}
+$$
 
 최종적으로 $a_n$은 다음과 같다.  
 $$
@@ -359,6 +373,7 @@ a_{n-1}
 & = \begin{bmatrix} 2 & 1 \\ 1 & -1 \end{bmatrix}\begin{bmatrix} 2^{n-1} & 0 \\ 0 & (-1)^{n-1} \end{bmatrix}\begin{bmatrix} \frac{1}{3} \\ \frac{1}{3} \end{bmatrix} \\
 & = \begin{bmatrix} 2 & 1 \\ 1 & -1 \end{bmatrix}\begin{bmatrix} \frac{2^{n-1}}{3} \\ \frac{(-1)^{n-1}}{3} \end{bmatrix} \\
 & = \begin{bmatrix} \frac{2^{n} - (-1)^{n}}{3} \\ \frac{2^{n-1} - (-1)^{n-1}}{3} \end{bmatrix} \\
+\\
 a_n = \frac{2^{n} - (-1)^{n}}{3} \\
 \end{aligned}
 $$
