@@ -212,10 +212,10 @@ a_{n-2}
 $$  
 
 $a_n$은 
-$
+\$$
 \bigl[\begin{smallmatrix} a_{n-1} \\  
 a_{n-2} \end{smallmatrix}\bigl]
-$
+$$
 를 
 $\begin{bmatrix}
     1 & 2 \\ 
