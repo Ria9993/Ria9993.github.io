@@ -211,8 +211,8 @@ a_{n-2}
 \end{aligned}
 $$  
 
-$a_n$은 $\begin{bmatrix} a_{n-1} \\ a_{n-2} \end{bmatrix}$를 $\begin{bmatrix} 1 & 2 \\ 1 & 0 \end{bmatrix}$로 선형변환한 결과이다.  
-그러므로 $a_n$은 시작점 $\begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} a_1 \\ a_0 \end{bmatrix}$ 을 n-1번 선형변환한 결과라고 볼 수 있으므로,  
+$a_n$은 $\bigl[\begin{smallmatrix} a_{n-1} \\ a_{n-2} \end{smallmatrix}\bigl]$를 $\bigl[\begin{smallmatrix} 1 & 2 \\ 1 & 0 \end{smallmatrix}\bigl]$로 선형변환한 결과이다.  
+그러므로 $a_n$은 시작점 $\bigl[\begin{smallmatrix} 1 \\ 0 \end{smallmatrix}\bigl] = \bigl[\begin{smallmatrix} a_1 \\ a_0 \end{smallmatrix}\bigl]$ 을 n-1번 선형변환한 결과라고 볼 수 있으므로,  
 다음과 같이 제곱을 이용하여 표현할 수 있다.  
 
 $$
@@ -233,17 +233,17 @@ a_{n-1}
 \end{aligned}
 $$
 
-여기서 문제가 있는데, $\begin{bmatrix} 1 & 2 \\ 1 & 0 \end{bmatrix}$ 의 제곱은 계산하기 쉽지 않다. (다른 원소에 영향을 미치기 때문)  
-하지만 $\begin{bmatrix} x & 0 \\ 0 & y \end{bmatrix}$같은 꼴의 행렬의 제곱은 간단하게 $\begin{bmatrix} x^n & 0 \\ 0 & y^n \end{bmatrix}$로 나타낼 수 있는데,  
+여기서 문제가 있는데, $\bigl[\begin{smallmatrix} 1 & 2 \\ 1 & 0 \end{smallmatrix}\bigl]$ 의 제곱은 계산하기 쉽지 않다. (다른 원소에 영향을 미치기 때문)  
+하지만 $\bigl[\begin{smallmatrix} x & 0 \\ 0 & y \end{smallmatrix}\bigl]$같은 꼴의 행렬의 제곱은 간단하게 $\bigl[\begin{smallmatrix} x^n & 0 \\ 0 & y^n \end{smallmatrix}\bigl]$로 나타낼 수 있는데,  
 
-이 특성을 적용시키기 위해 선형변환 $\begin{bmatrix} 1 & 2 \\ 1 & 0 \end{bmatrix}$ 에 대해 회전 영향을 받지 않는 두 벡터를 찾은 뒤  
+이 특성을 적용시키기 위해 선형변환 $\bigl[\begin{smallmatrix} 1 & 2 \\ 1 & 0 \end{smallmatrix}\bigl]$ 에 대해 회전 영향을 받지 않는 두 벡터를 찾은 뒤  
 이를 축(basis)으로 하는 좌표계로 변환하여 선형변환을 적용시키면 간단하게 제곱을 구할 수 있을 것이다.  
 
 이러한 벡터를 eigenvector라고 하며,  
 회전엔 영향을 받진 않으나 스케일에 영향을 받을 수 있으므로 이 스케일 값을 eigenvalue라고 한다.  
 
-그러면 다음 행렬변환 $\begin{bmatrix} 1 & 2 \\ 1 & 0 \end{bmatrix}$ 의 영향을 받지 않는 벡터를 찾아보자.  
-$\begin{bmatrix} 1 & 2 \\ 1 & 0 \end{bmatrix}$ 를 회전변환 $T$라고 하고,  
+그러면 다음 행렬변환 $\bigl[\begin{smallmatrix} 1 & 2 \\ 1 & 0 \end{smallmatrix}\bigl]$ 의 영향을 받지 않는 벡터를 찾아보자.  
+$\bigl[\begin{smallmatrix} 1 & 2 \\ 1 & 0 \end{smallmatrix}\bigl]$ 를 회전변환 $T$라고 하고,  
 이를 식으로 표현하면 다음과 같다.  
 $$
 \begin{aligned}
@@ -269,7 +269,8 @@ $$
 왜냐하면 $\det(\vec{a})$가 0이라는 것은 한 축이 소실되어 차원이 축소되었다는 것을 의미하기 때문에,  
 선형변환 이전의 벡터로 되돌릴 수 없다.  
 
-그러므로 $\det(T - \lambda I) = 0$을 만족하는 $\lambda$를 찾는다.
+그러므로 $\det(T - \lambda I) = 0$을 만족하는 $\lambda$를 찾는다.  
+
 $$
 \begin{aligned}
 \det(T - \lambda I) & = 0 \\
@@ -283,6 +284,7 @@ $$
 $$  
 
 이렇게 $\lambda$를 찾았으므로 이제 $\lambda$를 대입해서 만족하는 $\vec{v}$들을 찾아보자.  
+
 $$
 \begin{aligned}
 (T - \lambda I)\vec{v} & = \vec{0} \\ 
