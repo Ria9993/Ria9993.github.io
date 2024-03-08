@@ -211,7 +211,14 @@ a_{n-2}
 \end{aligned}
 $$  
 
-$a_n$은 $\bigl[\begin{smallmatrix} a_{n-1} \\ a_{n-2} \end{smallmatrix}\bigl]$를 $\bigl[\begin{smallmatrix} 1 & 2 \\ 1 & 0 \end{smallmatrix}\bigl]$로 선형변환한 결과이다.  
+$a_n$은 
+$
+\bigl[\begin{smallmatrix} a_{n-1} \\ 
+a_{n-2} \end{smallmatrix}\bigl]
+$
+를 
+$\begin{bmatrix} 1 & 2 \\ 1 & 0 \end{bmatrix}$
+로 선형변환한 결과이다.  
 그러므로 $a_n$은 시작점 $\bigl[\begin{smallmatrix} 1 \\ 0 \end{smallmatrix}\bigl] = \bigl[\begin{smallmatrix} a_1 \\ a_0 \end{smallmatrix}\bigl]$ 을 n-1번 선형변환한 결과라고 볼 수 있으므로,  
 다음과 같이 제곱을 이용하여 표현할 수 있다.  
 
