@@ -170,15 +170,14 @@ c_0 & = -c_1 \\
 a_1 & = 1 = 2c_0 - c_1 \\  
 \\  
 c_0 & = \frac{1}{3} \\  
-c_1 & = -\frac{1}{3}  
-
+c_1 & = -\frac{1}{3} \\
 \end{aligned}
 $$  
 
 최종적으로 $a_n$은 다음과 같다.  
 
 $$
-a_n = \frac{2^n - (-1)^n}{3}
+a_n = \frac{2^n - (-1)^n}{3} \\
 $$  
 
 결국 $c_0, c_1$이 생성함수 유도에서의 $A, B$에 해당하는 녀석들이라는걸 알 수 있다.  
@@ -287,7 +286,7 @@ $$
 (1 - \lambda)(-\lambda) - 2 & = 0 \\
 \lambda^2 - \lambda - 2 & = 0 \\
 \lambda & = \frac{1 \pm \sqrt{1 + 8}}{2} \\
-\lambda & = 2 \ or \ -1
+\lambda & = 2 \ or \ -1 \\
 \end{aligned}
 $$  
 
@@ -302,7 +301,6 @@ v_1 - 2v_2 & = 0 \\
 v_1 & = 2v_2 \\
 \vec{v} & = \begin{bmatrix} 2 \\ 1 \end{bmatrix} \\
 \\
-
 if \ \lambda = -1, \ \begin{bmatrix} 2 & 2 \\ 1 & 1 \end{bmatrix}\vec{v} & = \vec{0} \\
 2v_1 + 2v_2 & = 0 \\
 v_1 + v_2 & = 0 \\
@@ -361,6 +359,6 @@ a_{n-1}
 & = \begin{bmatrix} 2 & 1 \\ 1 & -1 \end{bmatrix}\begin{bmatrix} 2^{n-1} & 0 \\ 0 & (-1)^{n-1} \end{bmatrix}\begin{bmatrix} \frac{1}{3} \\ \frac{1}{3} \end{bmatrix} \\
 & = \begin{bmatrix} 2 & 1 \\ 1 & -1 \end{bmatrix}\begin{bmatrix} \frac{2^{n-1}}{3} \\ \frac{(-1)^{n-1}}{3} \end{bmatrix} \\
 & = \begin{bmatrix} \frac{2^{n} - (-1)^{n}}{3} \\ \frac{2^{n-1} - (-1)^{n-1}}{3} \end{bmatrix} \\
-a_n = \frac{2^{n} - (-1)^{n}}{3}  
+a_n = \frac{2^{n} - (-1)^{n}}{3} \\
 \end{aligned}
 $$
