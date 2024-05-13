@@ -10,7 +10,6 @@ comments: true
 read 할 일 없으니 write_combined 속성으로 최적화.
 이제 전송을 할 건데 CPU가 이걸 하나하나 쏘고 있을 수 없으니 GPU쪽에서 DMA로 pcie 통해서 쭈아아압 가져감.
 원래 이게 정석인데 이번에 또 판도가 뒤집힘
-https://quasarzone.com/bbs/qn_hardware/views/1448743
 Memory mapped i/o
 옛날 cpu랑 주변장치 클럭이 비슷할 땐 유용했음
 cpu가 빨라지면서 cpu가 대기해야 할 clock이 늘어나 aync i/o가 대세

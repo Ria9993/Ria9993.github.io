@@ -2,7 +2,7 @@
 layout: post
 title:  "Jacobsthal sequence의 closed form 유도"
 date:   2024-03-05 00:22:30 +0900
-categories: CS
+categories: Math
 comments: true
 use_math: true
 ---
