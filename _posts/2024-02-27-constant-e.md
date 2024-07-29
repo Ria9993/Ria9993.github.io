@@ -5,6 +5,7 @@ date:   2024-02-28 00:08:00 +0900
 categories: Math
 comments: true
 use_math: true
+published: false
 ---
 ***
 # $e$ 의 정의
