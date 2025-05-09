@@ -43,3 +43,6 @@ group :jekyll_plugins do
   gem 'jekyll-seo-tag'
   gem 'jekyll-linkpreview'
 end
+
+# 맨 뒤에 있어야 함
+gem 'jekyll-sitemap'
