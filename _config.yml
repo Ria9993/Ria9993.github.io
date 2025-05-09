@@ -59,6 +59,7 @@ plainwhite:
 plugins:
   - jekyll-seo-tag
   - jekyll-linkpreview
+  - jekyll-sitemap
 
 image:
 path: /assets/portfolio.png
