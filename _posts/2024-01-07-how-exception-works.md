@@ -67,7 +67,7 @@ try를 사용하는 것 만으로도 매 함수 호출마다 오버헤드가 발
 
 여기서 자세히 다루진 않으므로 자세한 구현은 SEH 문서를 찾아보시길…  
 
-# 구현 방식 2. Table-driven approach
+# 구현 방식 2. Table-driven Exception Handling
 (**zero-cost exception(itanium-ABI))**
 
 2번이 최근 컴파일러들이 자주 사용하는 방법이다.  
